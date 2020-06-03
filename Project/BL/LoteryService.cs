@@ -10,7 +10,7 @@ namespace BL
     public class LoteryService
     {
        /// <summary>
-       ///  shevi!!מקבלת כרטיס מועדון ומחזירה רשימה של כל המבצעים בכרטיס הזה
+       /// מקבלת כרטיס מועדון ומחזירה רשימה של כל המבצעים בכרטיס הזה
        /// </summary>
        /// <param name="clubCard"></param>
        /// <returns></returns>
