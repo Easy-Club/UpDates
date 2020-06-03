@@ -1,0 +1,6 @@
+D:\תכנות שבי\Project\DTO\bin\Debug\DTO.dll
+D:\תכנות שבי\Project\DTO\bin\Debug\DTO.pdb
+D:\תכנות שבי\Project\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\תכנות שבי\Project\DTO\obj\Debug\DTO.dll
+D:\תכנות שבי\Project\DTO\obj\Debug\DTO.pdb
+D:\תכנות שבי\Project\DTO\obj\Debug\DTO.csprojAssemblyReference.cache

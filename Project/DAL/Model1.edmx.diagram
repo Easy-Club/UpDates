@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a77436ce8e9407cb608608021af74ec" Name="Diagram1">
+        <EntityTypeShape EntityType="ClubCardsModel.Buyings" Width="1.5" PointX="9" PointY="8.875" />
+        <EntityTypeShape EntityType="ClubCardsModel.ClubCards" Width="1.5" PointX="6.75" PointY="4" />
+        <EntityTypeShape EntityType="ClubCardsModel.EnterpCards" Width="1.5" PointX="9.75" PointY="4.25" />
+        <EntityTypeShape EntityType="ClubCardsModel.Enterprises" Width="1.5" PointX="7.5" PointY="0.5" />
+        <EntityTypeShape EntityType="ClubCardsModel.Lotery" Width="1.5" PointX="4.5" PointY="4.5" />
+        <EntityTypeShape EntityType="ClubCardsModel.ManagerEnter" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ClubCardsModel.Users" Width="1.5" PointX="4.5" PointY="0.875" />
+        <AssociationConnector Association="ClubCardsModel.FK__Buyings__ClubCar__693CA210" />
+        <AssociationConnector Association="ClubCardsModel.FK__ClubCards__AppLo__66603565" />
+        <AssociationConnector Association="ClubCardsModel.FK__ClubCards__Enter__656C112C" />
+        <AssociationConnector Association="ClubCardsModel.FK__ClubCards__UserI__6477ECF3" />
+        <AssociationConnector Association="ClubCardsModel.FK__EnterpCar__Enter__619B8048" />
+        <AssociationConnector Association="ClubCardsModel.FK__EnterpCar__Prise__5FB337D6" />
+        <AssociationConnector Association="ClubCardsModel.FK__EnterpCar__Prise__60A75C0F" />
+        <AssociationConnector Association="ClubCardsModel.FK__ManagerEn__Enter__5AEE82B9" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

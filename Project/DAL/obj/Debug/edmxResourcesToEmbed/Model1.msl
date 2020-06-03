@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ClubCardsModelStoreContainer" CdmEntityContainer="ClubCardsEntities">
+    <EntitySetMapping Name="Buyings">
+      <EntityTypeMapping TypeName="ClubCardsModel.Buyings">
+        <MappingFragment StoreEntitySet="Buyings">
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="BuyDate" ColumnName="BuyDate" />
+          <ScalarProperty Name="ClubCardId" ColumnName="ClubCardId" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClubCards">
+      <EntityTypeMapping TypeName="ClubCardsModel.ClubCards">
+        <MappingFragment StoreEntitySet="ClubCards">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="AppLoteryId" ColumnName="AppLoteryId" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="BuyDate" ColumnName="BuyDate" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="StatusPriseForBirthDay" ColumnName="StatusPriseForBirthDay" />
+          <ScalarProperty Name="StatusPriseForNew" ColumnName="StatusPriseForNew" />
+          <ScalarProperty Name="EnterpCardId" ColumnName="EnterpCardId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterpCards">
+      <EntityTypeMapping TypeName="ClubCardsModel.EnterpCards">
+        <MappingFragment StoreEntitySet="EnterpCards">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="EnterpId" ColumnName="EnterpId" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="PriseForBirthDayId" ColumnName="PriseForBirthDayId" />
+          <ScalarProperty Name="PriseForNewId" ColumnName="PriseForNewId" />
+          <ScalarProperty Name="CountPoints" ColumnName="CountPoints" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enterprises">
+      <EntityTypeMapping TypeName="ClubCardsModel.Enterprises">
+        <MappingFragment StoreEntitySet="Enterprises">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotery">
+      <EntityTypeMapping TypeName="ClubCardsModel.Lotery">
+        <MappingFragment StoreEntitySet="Lotery">
+          <ScalarProperty Name="EnterpCardId" ColumnName="EnterpCardId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SumType" ColumnName="SumType" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagerEnter">
+      <EntityTypeMapping TypeName="ClubCardsModel.ManagerEnter">
+        <MappingFragment StoreEntitySet="ManagerEnter">
+          <ScalarProperty Name="EnterDate" ColumnName="EnterDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EnterpId" ColumnName="EnterpId" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ClubCardsModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
