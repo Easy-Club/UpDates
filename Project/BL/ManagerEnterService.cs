@@ -10,16 +10,17 @@ namespace BL
     public class ManagerEnterService
     {
         /// <summary>
-        /// מקבלת עסק ומבצעת כניסת מנהל הכוללת הגרלת סיסמא ושליחתה במיל למנהל
+        /// מקבלת עסק ומבצעת הגרלת סיסמא לעסק ושליחתה במייל למנהל
+        /// ManagerEnter ומחזירה אוביקט חדש מסוג 
         /// </summary>
         /// <param name="enterprise"></param>
         /// <returns></returns>
-        public static EnterprisesDTO ManagerEnter(EnterprisesDTO enterprise)
+        public static ManagerEnterDTO ManagerEnter(EnterprisesDTO enterprise)
         {
-
+            ManagerEnter managerEnter = new ManagerEnter();
             using (ClubCardsEntities db = new ClubCardsEntities())
             {
-                ManagerEnter managerEnter = new ManagerEnter();
+
                 managerEnter.EnterDate = new DateTime();
                 managerEnter.EnterpId = enterprise.C_id;
                 managerEnter.Password = PasswordService.RandomPassword();
@@ -36,21 +37,40 @@ namespace BL
                 }
                 EmailService.sendMail(managerEnter, enterprise.Email);
             }
-            return enterprise;
+            return Conversion.ManagerEnterConversion.ConvertToDTO(managerEnter);
         }
-        public static EnterprisesDTO isEnterpriseExist(string code)
+        /// <summary>
+        /// מקבלת קוד עסק וכתובת מייל ובודקת האם הנתונים תקינים
+        /// null אם כן מחזירה את העסק אחרת מחזירה 
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="mail"></param>
+        /// <returns></returns>
+        public static EnterprisesDTO isEnterpriseExist(string code, string mail)
         {
             Enterprises enterprise = new Enterprises();
             using (ClubCardsEntities db = new ClubCardsEntities())
             {
-                enterprise = db.Enterprises.FirstOrDefault(x => x.Code == code);
+                enterprise = db.Enterprises.FirstOrDefault(x => x.Code == code && x.Email == mail);
                 return enterprise != null ? Conversion.EnterprisesConversion.ConvertToDTO(enterprise) : null;
             }
         }
-        public static  logIn(int enterpId,int managerEnterId, string password)
+        /// <summary>
+        /// וסיסמא שנשלחה למייל ManagerEnter מקבלת אוביקט מסוג 
+        /// ובודקת האם לא עבר שעה מזמן שליחת הסיסמא אם לא בודקת האם הסיסמא תקינה  
+        /// false אחרת תחזיר true אם כן מחזירה   
+        /// </summary>
+        /// <param name="managerEnter"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static bool logIn(ManagerEnterDTO managerEnter, string password)
         {
-
+            if (DateTime.Now.Hour - ((DateTime)managerEnter.EnterDate).Hour <= 1)
+                if (password == managerEnter.Password)
+                    return true;
+            return false;
         }
+
         /// <summary>
         /// מקבלת מספר עוסק מורשה ובודקת האם קים ברשימת העסקים
         /// </summary>

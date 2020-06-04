@@ -31,5 +31,28 @@ namespace UI.Controllers
             return Ok(enterprises);//200
 
         }
+        [HttpGet]
+        public IHttpActionResult GetIsEnterpriseExist(string code,string mail)
+        {
+            EnterprisesDTO enterprise;
+           if ((enterprise=ManagerEnterService.isEnterpriseExist(code, mail))== null)
+                return BadRequest("Data not vaild");
+            return Ok(enterprise);
+        }
+        [HttpPost]
+        public IHttpActionResult PostManagerEnter(EnterprisesDTO enterprise)
+        {
+            ManagerEnterDTO managerEnter;
+            if ((managerEnter = ManagerEnterService.ManagerEnter(enterprise)) == null)
+                return BadRequest("System error");
+            return Ok( managerEnter);
+        }
+        [HttpGet]
+        public IHttpActionResult GetLogin(ManagerEnterDTO managerEnter,string possword)
+        {
+            if (ManagerEnterService.logIn(managerEnter, possword))
+                return Ok();
+            return BadRequest("Data not vaild");
+        }
     }
 }
