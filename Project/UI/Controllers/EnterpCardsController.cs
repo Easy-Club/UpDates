@@ -29,5 +29,20 @@ namespace UI.Controllers
            return Ok();
             return BadRequest("System error, please try later");
         }
+        [HttpGet]
+        public IHttpActionResult GetIsEnterpCardExist(EnterpCardsDTO enterpCardDTO)
+        {
+            //פונקתית סליקה
+            if (EnterpCardsService.isEnterpCardExist(enterpCardDTO))
+                return BadRequest("The card exists in the Enterprise");
+            return Ok("Card successfully registered");
+        }
+        [HttpPost]
+        public IHttpActionResult PostBuyEnterpCard(EnterpCardsDTO enterpCardDTO)
+        {
+            if (EnterpCardsService.buyEnterpCard(enterpCardDTO) == null)
+                return BadRequest("System error, please try later");
+            return Ok(enterpCardDTO);
+        }
     }
 }

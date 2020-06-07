@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using DTO;
+using System;
+using System.Linq;
 namespace BL
 {
     public class ManagerEnterService
@@ -100,6 +97,27 @@ namespace BL
                 return false;
             }
 
+        }
+        /// <summary>
+        /// ומבצעת רישום של העסק לטבלת עסקים EnterprisesDTO מקבלת אוביקט מסוג 
+        /// </summary>
+        /// <param name="enterpriseDTO"></param>
+        /// <returns></returns>
+        public static EnterprisesDTO signIn(EnterprisesDTO enterpriseDTO)
+        {
+            using (ClubCardsEntities db = new ClubCardsEntities())
+            {
+                try
+                {
+                    db.Enterprises.Add(Conversion.EnterprisesConversion.ConvertToEnterprises(enterpriseDTO));
+                    db.SaveChanges();
+                    return enterpriseDTO;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
         }
 
 
