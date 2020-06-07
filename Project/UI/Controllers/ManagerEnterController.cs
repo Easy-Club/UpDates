@@ -54,5 +54,12 @@ namespace UI.Controllers
                 return Ok();
             return BadRequest("Data not vaild");
         }
+      [HttpPost]
+      public IHttpActionResult PostSignIn(EnterprisesDTO enterprise)
+        {
+            if (ManagerEnterService.signIn(enterprise) == null)
+                return BadRequest("System error");
+            return Ok("The plugin enterprise successfully");
+        }
     }
 }
